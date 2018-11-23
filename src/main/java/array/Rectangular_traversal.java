@@ -3,6 +3,9 @@ package array;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 矩阵的矩形遍历
+ */
 public class Rectangular_traversal {
 
     public static void main(String[] args) {
