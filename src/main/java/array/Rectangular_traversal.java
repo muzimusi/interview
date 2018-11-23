@@ -68,29 +68,4 @@ public class Rectangular_traversal {
 
         return res;
     }
-
-
-    private static int inputEdge(int num, int[][] res, int left, int top, int right, int bottom) {
-        int curRow = top;
-        int curCol = left;
-        if (top == bottom && left == right) {
-            res[top][left] = num;
-            return num;
-        }
-
-
-        while (curCol < right) {
-            res[top][curCol++] = num++;
-        }
-        while (curRow < bottom) {
-            res[curRow++][right] = num++;
-        }
-        while (curCol > left) {
-            res[bottom][curCol--] = num++;
-        }
-        while (curRow > top) {
-            res[curRow--][left] = num++;
-        }
-        return num;
-    }
 }
