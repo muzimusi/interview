@@ -45,7 +45,7 @@ public class Rectangular_traversal {
     private static List<Integer> travel(int[][] matrix) {
         List<Integer> res = new ArrayList<Integer>();
 
-        //引导线：两横线，两竖线——》组成要给矩形，沿着改矩形遍历
+        //引导线：两横线，两竖线——》组成矩形，沿着给定矩形遍历
         for (int top = 0, left = 0, bottom = matrix.length - 1, right = matrix[0].length - 1, row = 0, col = 0;
              top <= bottom && left <= right;
              top++, bottom--, left++, right--) {
