@@ -1,0 +1,15 @@
+target/
+.mvn
+mvnw
+mvnw.cmd
+.cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+### *.xlsx
+*.rar
+*.cache
+/src/test/
