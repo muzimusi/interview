@@ -12,4 +12,4 @@ mvnw.cmd
 ### *.xlsx
 *.rar
 *.cache
-/src/test/
+#/src/test/
