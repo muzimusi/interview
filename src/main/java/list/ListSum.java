@@ -41,7 +41,7 @@ public class ListSum {
 
     public static void main(String[] args) {
         // (2 -> 4 -> 3) + (5 -> 6 -> 4)
-        ListNode alist1 = new ListNode(2);
+        ListNode alist1 = new ListNode(9);
         ListNode alist2 = new ListNode(4);
         ListNode alist3 = new ListNode(3);
         ListNode alist4 = new ListNode(7);
@@ -50,18 +50,27 @@ public class ListSum {
         alist3.setNext(alist4);
         ListNode blist1 = new ListNode(5);
         ListNode blist2 = new ListNode(6);
-        ListNode blist3 = new ListNode(6);
+        ListNode blist3 = new ListNode(8);
         blist1.setNext(blist2);
         blist2.setNext(blist3);
         ListSum listSum = new ListSum();
 
         ListUtil.showList(alist1);
-//        ListUtil.showList(listSum.reverseList(alist1));
+        System.out.println("+");
         ListUtil.showList(blist1);
-//        ListUtil.showList(listSum.reverseList(blist1));
-
-        ListNode resList = listSum.addTwoNumbers(alist1, blist1);
+        System.out.println("=====================================");
+        System.out.println("翻转对齐:");
+        ListNode aReverseList = listSum.reverseList(alist1);
+        ListUtil.showList(aReverseList);
+        System.out.println("+");
+        ListNode bReverseList = listSum.reverseList(blist1);
+        ListUtil.showList(bReverseList);
+        System.out.println("-------------------------------------");
+        ListNode resList = listSum.addTwoNumbers(aReverseList, bReverseList);
         ListUtil.showList(resList);
+        System.out.println("=====================================");
+        System.out.println("最终结果:");
+        ListUtil.showList(listSum.reverseList(resList));
 
     }
 }
