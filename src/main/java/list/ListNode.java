@@ -2,10 +2,15 @@ package list;
 
 public class ListNode {
     int val;
-    private ListNode next;
+    ListNode next;
 
     ListNode(int x) {
         val = x;
+    }
+
+    ListNode(ListNode node) {
+        val = node.getVal();
+        next = node.getNext();
     }
 
     public int getVal() {
@@ -22,5 +27,10 @@ public class ListNode {
 
     public void setNext(ListNode next) {
         this.next = next;
+    }
+
+    @Override
+    public String toString() {
+        return val+"->"+next;
     }
 }
