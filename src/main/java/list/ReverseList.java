@@ -6,10 +6,19 @@ public class ReverseList {
     private ListNode reverseList_cur(ListNode list) {
         if (list == null || list.getNext() == null)
             return list;
-        ListNode newHead = reverseList_cur(list.getNext());
+        ListNode tail = reverseList_cur(list.getNext());
         list.getNext().setNext(list);
         list.setNext(null);
-        return newHead;
+        return tail;
+    }
+
+    private ListNode reverseList_cur2(ListNode cur) {
+        if (cur == null || cur.next == null)
+            return cur;
+        ListNode reverseHead = reverseList_cur(cur.next);
+        cur.next.next = cur;
+        cur.next = null;
+        return reverseHead;
     }
 
     //递归
@@ -31,7 +40,7 @@ public class ReverseList {
             return head;
         ListNode pre = head;
         ListNode cur = head.next;
-        ListNode next = head.next.next;
+        ListNode next = cur.next;
         pre.next = null;
         // ...<-pre X cur->next->...
         while (cur != null) {
@@ -47,6 +56,6 @@ public class ReverseList {
         ReverseList reverseList = new ReverseList();
         ListNode list = ListUtil.generateList();
         ListUtil.showList(list);
-        ListUtil.showList(reverseList.reverseList_cur(list));
+        ListUtil.showList(reverseList.reverseList_cur2(list));
     }
 }

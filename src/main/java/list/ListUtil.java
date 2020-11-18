@@ -11,10 +11,10 @@ public class ListUtil {
     }
 
     public static ListNode generateList() {
-        ListNode alist1 = new ListNode(2);
-        ListNode alist2 = new ListNode(4);
+        ListNode alist1 = new ListNode(1);
+        ListNode alist2 = new ListNode(2);
         ListNode alist3 = new ListNode(3);
-        ListNode alist4 = new ListNode(7);
+        ListNode alist4 = new ListNode(4);
         alist1.setNext(alist2);
         alist2.setNext(alist3);
         alist3.setNext(alist4);
